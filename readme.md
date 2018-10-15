@@ -1,4 +1,4 @@
-# bz-mailer
+# bz-image
 
 ## Install
 `npm install bz-image -S`
