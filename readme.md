@@ -17,12 +17,13 @@ app.use('/images', bzImage(imageDirectory));
 **/images/width.height.fitStrategy/filename**
 
 
-width ( optional )
+width ( optional )  
 target image width
 
-height ( optional ) target image height
+height ( optional )  
+target image height
 
-fitStrategy ( optional )
+fitStrategy ( optional )  
 if width and height specified, fitStrategy can be used with values:
 - contain
 - cover
@@ -32,11 +33,11 @@ if width and height specified, fitStrategy can be used with values:
 
 
 #### Examples
-Fit Width
+Fit Width  
 `/images/200/image1.jpg`
 
-Fit Height
+Fit Height  
 `/images/0.200/image1.jpg`
 
-Fit Both with Fith Strategy = Contain
+Fit Both with Fith Strategy = Contain  
 `/images/200.200.contain/image1.jpg`
