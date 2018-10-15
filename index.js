@@ -22,6 +22,7 @@ module.exports = function(basePath) {
         if (height) prefix.push('h'+height);
         else prefix.push('hauto');
 
+        if (!fitStrategy) fitStrategy = 'inside';
         if (fitStrategy) prefix.push('f'+fitStrategy);
         else prefix.push('fauto');
         
