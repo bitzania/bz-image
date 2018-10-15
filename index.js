@@ -16,7 +16,7 @@ module.exports = function(basePath) {
 
     var resizeImage = async function(fileid, width, height, fitStrategy="inside", fnPath) {
         var prefix = [];
-        if (width) {
+        if (width && width>0) {
             prefix.push('w'+width);
             width = width * 1;
         }
@@ -25,7 +25,7 @@ module.exports = function(basePath) {
             width = null;
         }
 
-        if (height) {
+        if (height && height>0) {
             prefix.push('h'+height);
             height = height *1;
         }
