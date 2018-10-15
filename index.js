@@ -16,11 +16,23 @@ module.exports = function(basePath) {
 
     var resizeImage = async function(fileid, width, height, fitStrategy="inside", fnPath) {
         var prefix = [];
-        if (width) prefix.push('w'+width);
-        else prefix.push('wauto');
+        if (width) {
+            prefix.push('w'+width);
+            width = width * 1;
+        }
+        else {
+            prefix.push('wauto')
+            width = null;
+        }
 
-        if (height) prefix.push('h'+height);
-        else prefix.push('hauto');
+        if (height) {
+            prefix.push('h'+height);
+            height = height *1;
+        }
+        else {
+            prefix.push('hauto');
+            height = null;
+        }
 
         if (!fitStrategy) fitStrategy = 'inside';
         if (fitStrategy) prefix.push('f'+fitStrategy);
@@ -39,12 +51,13 @@ module.exports = function(basePath) {
                 return Promise.resolve(resizedFilename);
             }
             else {
-                return sharp(filename)
-                .resize(width*1, height*1, {fit:fitStrategy})
+                console.log("RESIZE IMAGE", width, height, fitStrategy);
+                return sharp(filename).resize(width, height, {fit:fitStrategy})
                 .toFile(resizedFilename)
                 .then((data)=> {
                     return resizedFilename;
                 })
+
             }
 
             
