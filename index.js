@@ -52,7 +52,7 @@ module.exports = function(basePath) {
             }
             else {
                 console.log("RESIZE IMAGE", width, height, fitStrategy);
-                return sharp(filename).resize(width, height, {fit:fitStrategy})
+                return sharp(filename).resize(null, null, {width:width, height:height, fit:fitStrategy})
                 .toFile(resizedFilename)
                 .then((data)=> {
                     return resizedFilename;
