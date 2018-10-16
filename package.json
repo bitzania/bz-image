@@ -17,6 +17,6 @@
   },
   "homepage": "https://github.com/bitzania/bz-image#readme",
   "dependencies": {
-    "sharp": "^0.20.8"
+    "sharp": "^0.21.0"
   }
 }
